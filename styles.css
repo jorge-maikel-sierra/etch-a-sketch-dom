@@ -1,0 +1,45 @@
+/* Reinicios simples */
+* { box-sizing: border-box; }
+html,body{ height:100%; margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#f7f7fb; color:#111; }
+h1{ font-size:1.25rem; margin:0 0 8px 0; }
+main{ max-width:1000px; margin:24px auto; padding:0 16px; }
+h1{ font-size:1.25rem; margin:0 0 8px 0; }
+p{ margin:0 0 16px 0; color:#333; }
+
+/* Contenedor de la cuadrícula */
+/* Contenedor del lienzo: ancho fijo para mantener píxeles constantes
+   se usa 960x960 para dar más espacio al dibujar */
+#gridContainer{
+  width: 960px; /* ancho total del lienzo */
+  height: 960px;
+  display: flex;
+  flex-wrap: wrap; /* permite que los elementos formen filas */
+  gap: 0; /* no usar gap para evitar alterar el tamaño de los cuadrados */
+  border: 2px solid #222;
+  margin: 12px 0 40px 0;
+}
+
+/* Cada celda - calcularemos su tamaño en JS para garantizar 16 por fila
+   usamos padding/border:0 para evitar que el tamaño cambie por margen */
+.grid-cell{
+  flex: 0 0 calc(100% / 16); /* ancho relativo a 16 columnas */
+  height: calc(100% / 16); /* hace que sea cuadrado porque el contenedor tiene altura fija */
+  background: #fff;
+  border: 0.5px solid #e1e1e6; /* borde sutil para ver las divisiones */
+}
+
+.grid-cell:hover{
+  background: #3333cc33; /* efecto hover suave (rgba) */
+}
+
+/* Pequeña nota responsiva: si la pantalla es más pequeña, reducir el tamaño del contenedor */
+@media (max-width: 700px){
+  #gridContainer{ width: 320px; height:320px; }
+}
+
+/* Controles */
+#controls{ display:flex; gap:12px; align-items:center; margin:12px 0; }
+#controls button{ padding:6px 10px; cursor:pointer; }
+
+/* Cursor en modo dibujo */
+.drawing { cursor: crosshair; }

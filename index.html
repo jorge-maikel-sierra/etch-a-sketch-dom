@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Etch-a-Sketch DOM - Cuadrícula 16x16</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Cuadrícula dinámicamente generada (lienzo de dibujo)</h1>
+      <p>Usa el panel de controles para generar un nuevo lienzo y seleccionar el modo de dibujo.</p>
+
+      <div id="controls">
+        <button id="newGridBtn">Nuevo lienzo</button>
+        <label><input type="checkbox" id="randomColor"> Color aleatorio</label>
+        <label><input type="checkbox" id="darkenMode"> Oscurecer 10% por interacción</label>
+      </div>
+
+      <!-- Contenedor de la cuadrícula (vacío en HTML, será poblado por script.js) -->
+      <div id="gridContainer" aria-label="Cuadrícula dinámica"></div>
+    </main>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
